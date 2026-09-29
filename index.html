@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="nl" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>PEKL · Pickle shot uit Amsterdam</title>
+  <meta name="description" content="PEKL is een shot van 60 ml augurkensap voor sporters. Zout, zuur en gemaakt in Amsterdam. Meld je aan voor de lancering.">
+  <meta name="theme-color" content="#8FAE87">
+  <meta property="og:title" content="PEKL · Pickle shot uit Amsterdam">
+  <meta property="og:description" content="Zout. Zuur. Groen. Een shot augurkensap voor sporters, gemaakt in Amsterdam.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
+  <script type="importmap">
+    { "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="pickle-l" viewBox="0 0 66 100">
+        <g transform="skewX(-11) translate(19 0)">
+          <path d="M14 0 C22 0 28 6 28 14 L28 70 L50 70 C58 70 62 76 62 84 L61 88 C59 95 54 100 46 100 L10 100 C4 100 0 96 0 90 L0 14 C0 6 6 0 14 0 Z" fill="currentColor"/>
+          <circle cx="15" cy="22" r="3.6" fill="var(--dot, #F5F0E1)"/>
+          <circle cx="12" cy="37" r="3.6" fill="var(--dot, #F5F0E1)"/>
+          <circle cx="16" cy="52" r="3.6" fill="var(--dot, #F5F0E1)"/>
+        </g>
+      </symbol>
+      <symbol id="seal" viewBox="0 0 240 240">
+        <path id="arc-top" d="M 44.3 126.6 A 76 76 0 1 1 195.7 126.6" fill="none"/>
+        <path id="arc-bottom" d="M 34.3 127.5 A 86 86 0 0 0 205.7 127.5" fill="none"/>
+        <circle cx="120" cy="120" r="112" fill="#FBF8EE"/>
+        <circle cx="120" cy="120" r="108" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <circle cx="120" cy="120" r="99" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0 6.2"/>
+        <g fill="currentColor" font-family="Archivo, sans-serif" font-weight="600" font-size="12.5" letter-spacing="3.2">
+          <text><textPath href="#arc-top" startOffset="50%" text-anchor="middle">PUUR AUGURKENSAP · 60 ML</textPath></text>
+          <text><textPath href="#arc-bottom" startOffset="50%" text-anchor="middle">AMSTERDAM · EST. 2026</textPath></text>
+        </g>
+        <text x="104" y="134" text-anchor="middle" fill="currentColor" font-family="'Fugaz One', sans-serif" font-size="52">PEK</text>
+        <use href="#pickle-l" x="149" y="97" width="26" height="38" style="--dot:#FBF8EE"/>
+        <rect x="100" y="148" width="40" height="2.4" rx="1.2" fill="currentColor"/>
+        <text x="120" y="168" text-anchor="middle" fill="currentColor" font-family="Archivo, sans-serif" font-weight="600" font-size="9" letter-spacing="3">PICKLE SHOT</text>
+      </symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#aanmelden">Direct naar aanmelden</a>
+
+  <!-- 3D-podium: vaste laag tussen de grote koppen (achter) en de copy (voor) -->
+  <canvas id="stage" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <nav class="topbar__nav" aria-label="Secties">
+      <a class="pill" href="#wat">Wat</a>
+      <a class="pill" href="#lokaal">Lokaal</a>
+      <a class="pill" href="#voor-wie">Voor wie</a>
+      <a class="pill" href="#waar">Waar</a>
+    </nav>
+    <a class="topbar__brand" href="#top" aria-label="PEKL, naar boven">
+      <span class="wordmark" aria-hidden="true">PEK<svg class="wordmark__l"><use href="#pickle-l"/></svg></span>
+    </a>
+    <a class="pill pill--solid topbar__cta" href="#aanmelden">Op de lijst</a>
+  </header>
+
+  <main id="top">
+
+    <!-- 1. HERO -->
+    <section class="scene hero" id="hero" data-bg="dille" aria-labelledby="hero-title">
+      <div class="hero__head back">
+        <p class="eyebrow eyebrow--center" data-intro>Puur augurkensap uit Amsterdam</p>
+        <h1 id="hero-title" class="display display--hero" data-fit>
+          <span class="line"><span>Zout.</span></span>
+          <span class="line"><span>Zuur.</span></span>
+          <span class="line"><span>Groen.</span></span>
+        </h1>
+        <p class="hero__sub" data-intro>Pickle shot · 60 ml</p>
+      </div>
+      <svg class="hero__fallback" viewBox="0 0 240 240" aria-hidden="true"><use href="#seal"/></svg>
+
+      <div class="hero__foot front" data-intro>
+        <div class="hero__left">
+          <p class="hero__lede">Een shot augurkensap voor sporters. Gemaakt in Amsterdam, van Nederlandse augurken.</p>
+          <form class="signup signup--compact hero__form" data-signup novalidate>
+            <label class="sr-only" for="email-hero">E-mailadres</label>
+            <input id="email-hero" name="email" type="email" inputmode="email" autocomplete="email" placeholder="je@email.nl" required>
+            <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="pill pill--solid pill--lg" type="submit">Zet me op de lijst</button>
+            <p class="signup__msg" role="status" aria-live="polite"></p>
+          </form>
+          <a class="pill pill--solid pill--lg hero__cta" href="#aanmelden">Zet me op de lijst</a>
+        </div>
+        <a class="round" href="#wat" aria-label="Scroll naar beneden">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v15m0 0-6-6m6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. EÉN SLOK -->
+    <section class="scene split split--left" id="wat" data-bg="dille" aria-labelledby="what-title">
+      <div class="split__copy front">
+        <p class="eyebrow" data-rise>Wat is PEKL</p>
+        <h2 id="what-title" class="display display--lg ruled" data-rise>Eén slok.<br>Klaar.</h2>
+        <p data-rise>PEKL is augurkensap in een flesje van 60 ml. Zout, zuur, met een vleugje dille. Je drinkt het in één keer leeg, vóór of na het sporten.</p>
+        <ul class="facts" data-rise>
+          <li><strong>60 ml</strong><span>één slok</span></li>
+          <li><strong>A'dam</strong><span>gebotteld</span></li>
+          <li><strong>±&nbsp;€2,50</strong><span>per shot</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. ANDERE KANT -->
+    <section class="scene statement" id="anders" data-bg="dille" aria-labelledby="roll-title">
+      <h2 id="roll-title" class="display display--giant back" data-drift>
+        <span>Zuur,</span>
+        <span>van een</span>
+        <span>andere kant.</span>
+      </h2>
+      <p class="statement__sub front" data-rise>Geen poeder, geen tablet. Gewoon augurkensap: zout, zuur, dille.</p>
+    </section>
+
+    <!-- 4. LOKAAL: gesplitst paneel, links flessengroen met tekst, rechts roze met de fles -->
+    <section class="scene panel" id="lokaal" data-bg="dille" aria-labelledby="local-title">
+      <div class="panel__stage" aria-hidden="true"></div>
+      <div class="panel__text">
+        <div class="front">
+          <p class="eyebrow" data-rise>Waarom lokaal</p>
+          <h2 id="local-title" class="display display--md" data-rise>Niet van de andere kant van de oceaan.</h2>
+          <p data-rise>De meeste pickle shots reizen de halve wereld over voordat ze in jouw sporttas belanden. PEKL maken we in Amsterdam, van Nederlandse augurken, in kleine batches.</p>
+          <ol class="leaders" data-rise>
+            <li><span>Gemaakt in</span><i></i><strong>Amsterdam</strong></li>
+            <li><span>Augurken uit</span><i></i><strong>Nederland</strong></li>
+            <li><span>Batches</span><i></i><strong>Klein</strong></li>
+            <li><span>Route</span><i></i><strong>Kort</strong></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. VOOR WIE -->
+    <section class="section who" id="voor-wie" data-bg="room" aria-labelledby="who-title">
+      <div class="who__head">
+        <p class="eyebrow" data-rise>Voor wie</p>
+        <h2 id="who-title" class="display display--lg ruled" data-rise>Voor wie zweet.</h2>
+        <p data-rise>Van de eerste kilometer tot de laatste set. PEKL past in elke sporttas.</p>
+      </div>
+      <ul class="sports" role="list">
+        <li class="sport"><span class="sport__n">01</span><h3>Hardlopen</h3><p>Voor de start of na de laatste kilometer.</p></li>
+        <li class="sport"><span class="sport__n">02</span><h3>Wielrennen</h3><p>Past in je achterzak. Ook op kilometer 120.</p></li>
+        <li class="sport"><span class="sport__n">03</span><h3>Tennis &amp; padel</h3><p>Op de bank, tussen twee sets.</p></li>
+        <li class="sport"><span class="sport__n">04</span><h3>Jiu jitsu</h3><p>Na de laatste rol van de avond.</p></li>
+        <li class="sport"><span class="sport__n">05</span><h3>Voetbal</h3><p>In de rust, in de kleedkamer.</p></li>
+        <li class="sport"><span class="sport__n">06</span><h3>Klimmen</h3><p>Klein genoeg voor naast je chalkbag.</p></li>
+        <li class="sport"><span class="sport__n">07</span><h3>Zwemmen</h3><p>Voor na het laatste baantje.</p></li>
+        <li class="sport"><span class="sport__n">08</span><h3>Sportschool</h3><p>Tussen de sets of na de laatste.</p></li>
+      </ul>
+    </section>
+
+    <!-- MAGNESIUM -->
+    <section class="claim" data-bg="room" aria-label="Magnesium">
+      <p class="claim__text" data-rise>Magnesium draagt bij aan een normale spierfunctie.</p>
+    </section>
+
+    <!-- WAAR TE KOOP -->
+    <section class="section where" id="waar" data-bg="room" aria-labelledby="where-title">
+      <p class="eyebrow eyebrow--center" data-rise>Waar te koop</p>
+      <h2 id="where-title" class="display display--lg where__title" data-scramble>Binnenkort bij jou in de buurt.</h2>
+      <ul class="stockists" role="list" data-stockists>
+        <!-- Verkooppunten komen hier. Voorbeeld:
+        <li class="stockist"><h3>Naam</h3><p>Straat 1, Amsterdam</p></li> -->
+        <li class="stockist stockist--empty"><span>Jouw sportschool?</span></li>
+        <li class="stockist stockist--empty"><span>Jouw club?</span></li>
+        <li class="stockist stockist--empty"><span>Jouw winkel?</span></li>
+      </ul>
+      <p class="where__cta">We zoeken de eerste verkooppunten. Wil je PEKL verkopen? <a href="mailto:hallo@pekl.nl">hallo@pekl.nl</a></p>
+    </section>
+
+    <!-- 6. AANMELDEN: de fles landt erboven -->
+    <section class="scene join" id="aanmelden" data-bg="dille" aria-labelledby="join-title">
+      <div class="join__copy front">
+        <p class="eyebrow eyebrow--center" data-rise>Pre-launch</p>
+        <h2 id="join-title" class="display display--xl" data-rise>Als eerste proeven?</h2>
+        <p data-rise>Meld je aan en we laten je weten wanneer PEKL er is.</p>
+        <form class="signup signup--compact" data-signup novalidate data-rise>
+          <label class="sr-only" for="email-join">E-mailadres</label>
+          <input id="email-join" name="email" type="email" inputmode="email" autocomplete="email" placeholder="je@email.nl" required>
+          <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="pill pill--solid pill--lg" type="submit">Zet me op de lijst</button>
+          <p class="signup__note">Alleen een mail bij de lancering. Afmelden kan altijd.</p>
+          <p class="signup__msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span class="wordmark wordmark--sm" aria-hidden="true">PEK<svg class="wordmark__l"><use href="#pickle-l"/></svg></span>
+    <p>Gebotteld in Amsterdam · pekl.nl</p>
+    <p><a href="https://instagram.com/" rel="noopener">Instagram</a> · <a href="mailto:hallo@pekl.nl">hallo@pekl.nl</a></p>
+    <p class="footer__small">© 2026 PEKL</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
