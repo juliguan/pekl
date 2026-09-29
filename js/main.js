@@ -56,7 +56,10 @@ function fitText() {
     });
     const size = parseFloat(getComputedStyle(el).fontSize);
     const avail = el.clientWidth;
-    el.style.fontSize = `${(size * avail) / (right - left) * 0.985}px`;
+    const lines = new Set([...spans].map((sp) => Math.round(sp.getBoundingClientRect().top))).size;
+    const byWidth = (size * avail) / (right - left) * 0.985;
+    const byHeight = (innerHeight * 0.4) / (lines * 0.88); // nooit hoger dan 40% van het scherm
+    el.style.fontSize = `${Math.min(byWidth, byHeight)}px`;
   });
 }
 
